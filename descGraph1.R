@@ -45,6 +45,14 @@ descGraph1 <- function(x,
         colnames(tabl) <- ru_colnames[statistics]
     }
     
+    if (lang == "ua") {
+        ua_colnames <- c("Змінні", "n", "Середнє", "Станд. відх.",
+                         "Медіана", "Усіч. сер.", "Мед. абс. відх.",
+                         "Мін.", "Макс.", "Розмах", "Асимм.", "Ексцесс", 
+                         "Станд. пох.")
+        colnames(tabl) <- ua_colnames[statistics]
+    }
+    
     tabl$graph <- imglink
     colnames(tabl)[colnames(tabl) == "graph"] <- ""
     
@@ -53,7 +61,7 @@ descGraph1 <- function(x,
     return(tabl)
 }
 
-Examples
+# Examples
 # kable(descGraph1(x=cars$speed, plot_type = "stripchart"))
 # kable(descGraph1(x=cars$speed, plot_type = "hist"))
 
